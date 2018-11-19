@@ -1,5 +1,5 @@
-# djang-rest_framework-nested_relationships
-Ejemplo de como usar modelos relacionados con Django REST Framework
+# django-rest-auth
+Ejemplo de como proteger la API con Django REST Auth
 
 # Run
 python manage.py runserver
