@@ -1,14 +1,21 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-# Importamos los ViewSet de nuestra app
+# Importamos los ViewSets de nuestra app
 from snippets.views import SnippetViewSet, PublisherViewSet
 
-router = routers.DefaultRouter() # Instanciamos el router de REST Framework
-router.register('snippets', SnippetViewSet) # Definimos la URL de la API para los snippets
-router.register('publishers', PublisherViewSet) # Definimos la URL de la API para los publishers
+# Instanciamos el router de REST Framework
+router = routers.DefaultRouter()
+# Definimos la URL de la API para los snippets
+router.register('snippets', SnippetViewSet)
+# Definimos la URL de la API para los publishers
+router.register('publishers', PublisherViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # Incluimos las URLs de nuestros ViewSets
+    path('api/', include(router.urls)),
+    # Incluimos las URLs de la app rest_auth 
+    path('rest-auth/', include('rest_auth.urls')),
+    # Incluimos las URLs del admin site
     path('admin/', admin.site.urls),
 ]
