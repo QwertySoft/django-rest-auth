@@ -16,7 +16,7 @@ class PublisherSerializer(serializers.ModelSerializer):
 class SnippetSerializer(serializers.ModelSerializer):
     created = serializers.DateTimeField(read_only=True)
     # Definimos el serializador a usar para el Publisher de un Snippet
-    publisher = PublisherSerializer(read_only=True)
+    publisher = PublisherSerializer()
     # Utilizamos un campo para actualizar la referencia (clave foránea) de un Snippet a un Publisher
     publisher_id = serializers.IntegerField(required=False)
 
