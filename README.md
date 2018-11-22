@@ -7,5 +7,8 @@ Ejemplo de como proteger la API con Django REST Auth
     pip install django-filter
     pip install django-rest-auth
 
+# Run migrations
+    python manage.py migrate
+    
 # Run
     python manage.py runserver
